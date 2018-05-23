@@ -1,0 +1,39 @@
+<idea-plugin>
+  <id>com.your.company.unique.plugin.id</id>
+  <name>Plugin display name here</name>
+  <version>1.0</version>
+  <vendor email="NecroDriver@foxmail.com" url="http://www.mafh.xin.com">NIDF</vendor>
+
+  <description><![CDATA[
+      首尾添加指定字符串.
+      e.g.: SELECT U.* FROM USER U 转化为: buf.append("SELECT U.* FROM USER U");
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!--新版本插件，若没有此标签，那么在PhpStorm,WebStorm上不能成功安装-->
+  <depends>com.intellij.modules.lang</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <action id="AppendString" class="com.mafh.AppendAction" text="Append String" description="Append String">
+      <!--将action添加到右键菜单上-->
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+      <!--设置默认快捷键-->
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl 6"/>
+    </action>
+  </actions>
+
+</idea-plugin>
