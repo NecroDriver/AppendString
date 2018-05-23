@@ -1,12 +1,12 @@
 <idea-plugin>
   <id>com.your.company.unique.plugin.id</id>
-  <name>Plugin display name here</name>
+  <name>Append String</name>
   <version>1.0</version>
   <vendor email="NecroDriver@foxmail.com" url="http://www.mafh.xin.com">NIDF</vendor>
 
   <description><![CDATA[
       首尾添加指定字符串.
-      e.g.: SELECT U.* FROM USER U 转化为: buf.append("SELECT U.* FROM USER U");
+      e.g.: SELECT U.* FROM USER U 转化为: sql.append("SELECT U.* FROM USER U");
     ]]></description>
 
   <change-notes><![CDATA[
@@ -32,7 +32,7 @@
       <!--将action添加到右键菜单上-->
       <add-to-group group-id="EditorPopupMenu" anchor="last"/>
       <!--设置默认快捷键-->
-      <keyboard-shortcut keymap="$default" first-keystroke="ctrl 6"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift L"/>
     </action>
   </actions>
 
