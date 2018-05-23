@@ -41,8 +41,8 @@ public class AppendAction extends EditorAction {
             String txt = sm.getSelectedText(); //获取选中的内容
             if (txt != null && !"".equals(txt.trim())) {
                 //弹出输入框
-                String aps = Messages.showInputDialog("输入字符串,例：buf.append(\"&\");", "追加字符串",
-                        Messages.getInformationIcon(), "buf.append(\"&\");", new NonEmptyInputValidator());
+                String aps = Messages.showInputDialog("输入字符串,例：sql.append(\"&\");", "追加字符串",
+                        Messages.getInformationIcon(), "sql.append(\"&\");", new NonEmptyInputValidator());
                 if (aps == null || "".equals(aps.trim())) return;
                 String[] apps = aps.split("&");
                 if (apps.length < 2) return;
@@ -52,14 +52,13 @@ public class AppendAction extends EditorAction {
 
                 //拼接字符串
                 for (String str:txts) {
-                    String tstr = str.trim();
                     String line = null;
-                    if ("".equals(tstr)) {
+                    if ("".equals(str)) {
                         line = "\n";
                     } else {
-                        int tind = str.indexOf(tstr);
+                        int tind = str.indexOf(str);
                         String before = str.substring(0, tind);
-                        line = before+apps[0]+tstr+apps[1]+"\n";
+                        line = before+apps[0]+str+apps[1]+"\n";
                     }
                     bui.append(line);
                 }
